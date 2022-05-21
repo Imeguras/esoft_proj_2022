@@ -38,10 +38,11 @@ RNF: Requisito Não Funcional
 ## Gestão de transações e trocas de automóveis
 
 - **RF.15**: O funcionário tem de ser capaz de registar as variadas transações de compra, venda e trocas de automóveis entre a AutoSell e os seus clientes |Requisito Critico| { Custo de implementação baixa }
-- **RF.16**: No registo de cada transação tem de conter uma referencia que identifique o cliente que esteve envolvido na transação, os automóveis que estiveram envolvidos na transação, e caso a transação tenha sido uma compra ou venda este deve guardar o valor monetário que foi acatado entre a AutoSell e o respetivo Cliente. |Requisito Muito Importante| { Custo de implementação baixa }
+- **RF.16**: No registo de cada transação tem de conter uma referencia que identifique o cliente que esteve envolvido na transação, os automóveis que estiveram envolvidos na transação, a data e caso a transação tenha sido uma compra ou venda este deve guardar o valor monetário que foi acatado entre a AutoSell e o respetivo Cliente. |Requisito Muito Importante| { Custo de implementação baixa }
 - **RF.17**: Caso uma transação seja uma troca, o valor da diferença monetária entre os automóveis, é compensado monetariamente pelo cliente da AutoSell caso o veiculo do cliente tenha uma apreciação monetária maior que o veiculo da AutoSell não existe compensações por parte da AutoSell |Requisito Muito Importante| { Custo de implementação baixa devido aos dados que são usados serem bastante uniformes a nível de representação }
 - **RNF.5**: O AutoSell não irá registar a valorização ou desvalorização de um carro ao longo do tempo, uma avaliação e feita por parte do funcionário com auxilio do site VolanteSic, e como referido só irá registar o ganhos e percas capitais, estas que são determinadas ao ocorrer uma transação. |Requisito Critico| { Custo de implementação baixa, por esta ser só uma limitação do software }
-- **RF.18**: O software tem de permitir ao funcionário ver o histórico de transações de um cliente |Requisito Importante| { Custo de implementação baixa pois só depende da interface gráfica } 
+- **RF.18**: O software tem de permitir ao funcionário ver o histórico de transações de um cliente |Requisito Importante| { Custo de implementação baixa pois só depende da interface gráfica }
+
 ## Gestão de estatísticas
 
 - **RF.19**: Deve ser possível ao funcionário visualizar qual as marcas e modelos de automóveis mais vendidos num certo período do tempo, tem também de permitir restringir este valor a uma filial escolhida pelo funcionário. |Requisito Relevante| { Custo de implementação média devido a qualidade dos dados para tal ser feito, e por motivos já antes referidos }
