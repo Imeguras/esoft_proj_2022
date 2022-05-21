@@ -13,7 +13,7 @@
 
     Na Janela de Veículos, deverá ser possível visualizar todos os veículos e ter um filtro para ajudar a pesquisa dos mesmos.
 
-    Deverá ser possível adicionar e editar um veículo, abrindo a**Janela Adicionar / Editar Veículos** com esse fim.
+    Deverá ser possível adicionar e editar um veículo, abrindo a **Janela Adicionar / Editar Veículos** com esse fim.
 
 ### Janela Adicionar / Editar Veículos:
 
