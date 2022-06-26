@@ -8,8 +8,10 @@ public class JanelaVeiculos extends Janela{
     private JButton adicionarVeiculosButton;
     private JList veiculosList;
     private JButton voltarButton;
+	private JTextField filtroText;
+	private JButton filtrarButton;
 
-    public JanelaVeiculos(Janela anterior) {
+	public JanelaVeiculos(Janela anterior) {
 		super(); 
 		frame = new JFrame("Veículos");
 		frame.setContentPane(panel1);
@@ -25,14 +27,23 @@ public class JanelaVeiculos extends Janela{
 			anterior.getFrame().setVisible(true);
 			this.frame.setVisible(false);
 		});
+		//on filtrarButton, filter the list with the text in filtroText
+		filtrarButton.addActionListener((e) -> {
+			updateFrame();
+		});
 		
-		frame.pack();
 		frame.setVisible(true);
 	}
 
 	@Override
 	public void updateFrame() {
-		veiculosList.setListData(Main.veiculos.toArray());
-
+		String filtro = filtroText.getText();
+		if(filtro.isEmpty()){
+			veiculosList.setListData(Main.veiculos.toArray());
+		}else{
+			veiculosList.setListData(Main.veiculos.stream().filter(v -> (v.toString().contains(filtro))).toArray());
+		}
+		
+		frame.pack();
 	}
 }
