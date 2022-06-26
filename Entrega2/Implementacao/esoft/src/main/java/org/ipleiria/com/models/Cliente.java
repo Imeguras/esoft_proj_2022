@@ -1,4 +1,4 @@
 package org.ipleiria.com.models;
 
-public class Cliente {
+public class Cliente extends Pessoa {
 }
