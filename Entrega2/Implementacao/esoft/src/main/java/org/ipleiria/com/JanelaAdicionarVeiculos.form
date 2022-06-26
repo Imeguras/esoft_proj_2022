@@ -59,6 +59,12 @@
           <text value="Alterar Veiculo"/>
         </properties>
       </component>
+	  <component id="79041" class="javax.swing.JButton" binding="cancelButton">
+		<constraints/>
+		<properties>
+		  <text value="Cancelar"/>
+		</properties>
+	  </component>
     </children>
   </grid>
 </form>

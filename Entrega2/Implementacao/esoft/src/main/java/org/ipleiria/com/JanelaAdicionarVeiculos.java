@@ -17,6 +17,7 @@ public class JanelaAdicionarVeiculos extends Janela {
 	private JTextField avaliacaoMonetariaTextField;
 	private JComboBox<Local> localComboBox;
 	private JButton submitButton;
+	private JButton cancelButton;
 	//adicionar
     public JanelaAdicionarVeiculos(Janela anterior) {
 		super(); 
@@ -30,7 +31,11 @@ public class JanelaAdicionarVeiculos extends Janela {
 		localComboBox.setModel(new DefaultComboBoxModel<Local>(Main.locais.toArray(new Local[Main.locais.size()])));
 
 		submitButton.setText("Adicionar Veiculo");
-		
+		cancelButton.addActionListener(e -> {
+			anterior.getFrame().setVisible(true);
+			this.frame.dispose();
+			
+		});
 		//on submitButton go to JanelaVeiculos
 		submitButton.addActionListener(e -> {
 			Main.veiculos.add(new Veiculo(matriculaTextField.getText(), marcaTextField.getText(), modeloTextField.getText(), (Cliente)anteriorDonoComboBox.getSelectedItem(),null, Integer.parseInt(numDonosPreviosTextField.getText()), caracteristicasTextField.getText(), Double.parseDouble(avaliacaoMonetariaTextField.getText()), (Local)localComboBox.getSelectedItem()));
@@ -49,6 +54,11 @@ public class JanelaAdicionarVeiculos extends Janela {
 		anteriorDonoComboBox.setModel(new DefaultComboBoxModel<Cliente>(Main.clientes.toArray(new Cliente[Main.clientes.size()])));
 		//populate ComboBox with locations
 		localComboBox.setModel(new DefaultComboBoxModel<Local>(Main.locais.toArray(new Local[Main.locais.size()])));
+		cancelButton.addActionListener(e -> {
+			anterior.getFrame().setVisible(true);
+			this.frame.dispose();
+			
+		});
 		submitButton.setText("Alterar Veiculo");
 		submitButton.addActionListener(e -> {
 			Veiculo a = Main.veiculos.get(Main.veiculos.indexOf(id));

@@ -21,7 +21,11 @@ public class JanelaVeiculos extends Janela{
 			this.frame.setVisible(false);
 			//frame.dispose();
 		});
-
+		voltarButton.addActionListener((e) -> {
+			anterior.getFrame().setVisible(true);
+			this.frame.setVisible(false);
+		});
+		
 		frame.pack();
 		frame.setVisible(true);
 	}
