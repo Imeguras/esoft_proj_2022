@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="org.ipleiria.com.JanelaAdicionarVeiculos">
+  <grid id="27dc6" binding="panel1" default-binding="true" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+    <constraints>
+      <xy x="20" y="20" width="636" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="79032" class="javax.swing.JTextField" binding="matriculaTextField">
+        <constraints/>
+        <properties>
+          <text value="Matricula"/>
+        </properties>
+      </component>
+      <component id="79033" class="javax.swing.JTextField" binding="marcaTextField">
+        <constraints/>
+        <properties>
+          <text value="Marca"/>
+        </properties>
+      </component>
+      <component id="79034" class="javax.swing.JTextField" binding="modeloTextField">
+        <constraints/>
+        <properties>
+          <text value="Modelo"/>
+        </properties>
+      </component>
+      <component id="79035" class="javax.swing.JComboBox" binding="anteriorDonoComboBox">
+        <constraints/>
+        <properties>
+          <model/>
+        </properties>
+      </component>
+      <component id="79036" class="javax.swing.JTextField" binding="numDonosPreviosTextField">
+        <constraints/>
+        <properties>
+          <text value="Numero de Donos Previos"/>
+        </properties>
+      </component>
+      <component id="79037" class="javax.swing.JTextField" binding="caracteristicasTextField">
+        <constraints/>
+        <properties>
+          <text value="Caracteristicas"/>
+        </properties>
+      </component>
+      <component id="79038" class="javax.swing.JTextField" binding="avaliacaoMonetariaTextField">
+        <constraints/>
+        <properties>
+          <text value="Avaliacao Monetaria"/>
+        </properties>
+      </component>
+      <component id="79039" class="javax.swing.JComboBox" binding="localComboBox">
+        <constraints/>
+        <properties/>
+      </component>
+      <component id="79040" class="javax.swing.JButton" binding="submitButton">
+        <constraints/>
+        <properties>
+          <text value="Alterar Veiculo"/>
+        </properties>
+      </component>
+	  <component id="79041" class="javax.swing.JButton" binding="cancelButton">
+		<constraints/>
+		<properties>
+		  <text value="Cancelar"/>
+		</properties>
+	  </component>
+    </children>
+  </grid>
+</form>
