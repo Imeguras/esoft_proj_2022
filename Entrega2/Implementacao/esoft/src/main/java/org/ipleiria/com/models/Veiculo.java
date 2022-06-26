@@ -10,8 +10,11 @@ public class Veiculo {
     public String caracteristicas;
     public Double avaliacao_monetaria;
     public Local local;
+	//field for time of last update
+	public Long last_monetary_update;
+
     // constructor for veiculo
-	public Veiculo(String matricula, String marca, String modelo, Pessoa anterior_dono, Pessoa dono_cur, Integer num_donos_previos, String caracteristicas, Double avaliacao_monetaria, Local local) {
+	public Veiculo(String matricula, String marca, String modelo, Pessoa anterior_dono, Pessoa dono_cur, Integer num_donos_previos, String caracteristicas, Double avaliacao_monetaria, Local local, Long last_monetary_update) {
 		this.matricula = matricula;
 		this.marca = marca;
 		this.modelo = modelo;
@@ -21,12 +24,17 @@ public class Veiculo {
 		this.caracteristicas = caracteristicas;
 		this.avaliacao_monetaria = avaliacao_monetaria;
 		this.local = local;
+		this.last_monetary_update = last_monetary_update;
 	}
+	
 	//override to string in order to display all the strings of this object
 	@Override
 	public String toString() {
 		//if any field is null then it will be displayed as "null"
-		return "Veiculo [matricula=" + (matricula == null ? "null" : matricula) + ", marca=" + (marca == null ? "null" : marca) + ", modelo=" + (modelo == null ? "null" : modelo) + ", anterior_dono=" + (anterior_dono == null ? "null" : anterior_dono) + ", dono_cur=" + (dono_cur == null ? "null" : dono_cur) + ", num_donos_previos=" + (num_donos_previos == null ? "null" : num_donos_previos) + ", caracteristicas=" + (caracteristicas == null ? "null" : caracteristicas) + ", avaliacao_monetaria=" + (avaliacao_monetaria == null ? "null" : avaliacao_monetaria) + ", local=" + (local == null ? "null" : local) + "]";
+		return "Veiculo [matricula=" + (matricula == null ? "null" : matricula) + ", marca=" + (marca == null ? "null" : marca) + ", modelo=" + (modelo == null ? "null" : modelo) + ", anterior_dono=" + (anterior_dono == null ? "null" : anterior_dono) + ", dono_cur=" + (dono_cur == null ? "null" : dono_cur) + ", num_donos_previos=" + (num_donos_previos == null ? "null" : num_donos_previos) + ", caracteristicas=" + (caracteristicas == null ? "null" : caracteristicas) + ", avaliacao_monetaria=" + (avaliacao_monetaria == null ? "null" : avaliacao_monetaria) + ", local=" + (local == null ? "null" : local) + ", ultima avaliação="+ 
+		//display the last monetary update in a readable format
+		(last_monetary_update == null ? "null" : new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new java.util.Date(last_monetary_update))) + "]";
+		
 		
 	}
 	public void setMatricula(String matricula) {
@@ -56,5 +64,7 @@ public class Veiculo {
 	public void setLocal(Local local) {
 		this.local = local;
 	}
-
+	public void setLast_monetary_update(Long last_monetary_update) {
+		this.last_monetary_update = last_monetary_update;
+	}
 }
