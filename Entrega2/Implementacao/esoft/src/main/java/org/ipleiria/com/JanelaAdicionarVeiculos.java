@@ -61,9 +61,21 @@ public class JanelaAdicionarVeiculos extends Janela {
 		frame.setContentPane(panel1);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//populate ComboBox with previous owners
-		anteriorDonoComboBox.setModel(new DefaultComboBoxModel<Cliente>(Main.clientes.toArray(new Cliente[Main.clientes.size()])));
+		Veiculo a = Main.veiculos.stream().filter(v -> v.getId() == id).findFirst().get();
+		matriculaTextField.setText(a.matricula);
+		marcaTextField.setText(a.marca);
+		modeloTextField.setText(a.modelo);
+	
+		anteriorDonoComboBox.setModel(new DefaultComboBoxModel<Cliente>(Main.clientes.stream().filter(c -> c instanceof Cliente).toArray(Cliente[]::new)));
+		//set selected with the item whos id is the same as the one in the veiculo
+		//anteriorDonoComboBox.setSelectedIndex(a-1);
+		numDonosPreviosTextField.setText(a.num_donos_previos+"");
+		caracteristicasTextField.setText(a.caracteristicas);
+		avaliacaoMonetariaTextField.setText(a.avaliacao_monetaria+"");
+
 		//populate ComboBox with locations
 		localComboBox.setModel(new DefaultComboBoxModel<Local>(Main.locais.toArray(new Local[Main.locais.size()])));
+		
 		cancelButton.addActionListener(e -> {
 			anterior.getFrame().setVisible(true);
 			this.frame.dispose();
@@ -72,7 +84,8 @@ public class JanelaAdicionarVeiculos extends Janela {
 		submitButton.setText("Alterar Veiculo");
 		submitButton.addActionListener(e -> {
 			try{
-				Veiculo a = Main.veiculos.get(Main.veiculos.indexOf(id));
+				// Veiculo a is equals to the veiculo with id = id
+				
 				a.setMatricula(matriculaTextField.getText());
 				a.setMarca(marcaTextField.getText());
 				a.setModelo(modeloTextField.getText());
