@@ -8,7 +8,8 @@ public class Main {
 	public static LinkedList<Veiculo> veiculos = new LinkedList<Veiculo>();
 	public static LinkedList<Pessoa> clientes = new LinkedList<Pessoa>();
 	public static LinkedList<Local> locais = new LinkedList<Local>();
-    public static void main(String[] args) {
+	public static DonoEmpresa empresa_como_proprietario = new DonoEmpresa(); 
+	public static void main(String[] args) {
 		//open JanelaPrincipal
 		seed();
 		JanelaPrincipal janelaPrincipal = new JanelaPrincipal();
@@ -16,7 +17,7 @@ public class Main {
 		
     }
 	public static void seed(){
-		DonoEmpresa empresa_como_proprietario = new DonoEmpresa(); 
+		
 		Cliente cliente1= new Cliente(); 
 		Cliente cliente2= new Cliente();
 		Cliente cliente3= new Cliente();
@@ -27,10 +28,10 @@ public class Main {
 		clientes.add(cliente3);
 		clientes.add(cliente4);
 
-		Veiculo veiculo1 = new Veiculo("matricula", "marca", "modelo", empresa_como_proprietario, cliente1, 1, "caracteristicas", 3.0d, new Local(), System.currentTimeMillis()); 
-		Veiculo veiculo2 = new Veiculo("matricula", "marca", "modelo", cliente2, empresa_como_proprietario, 10, "caracteristicas", 3.0d, new Local(), System.currentTimeMillis());
-		Veiculo veiculo3 = new Veiculo("matricula", "marca", "modelo", empresa_como_proprietario, cliente3, 30, "caracteristicas", 3.0d, new Local(), System.currentTimeMillis());
-		Veiculo veiculo4 = new Veiculo("matricula", "marca", "modelo", cliente4, empresa_como_proprietario, 4, "caracteristicas", 3.0d, new Local(), System.currentTimeMillis());
+		Veiculo veiculo1 = new Veiculo("matricula", "marca", "modelo", cliente3, cliente1, 1, "caracteristicas", 3.0d, new Local(), System.currentTimeMillis()); 
+		Veiculo veiculo2 = new Veiculo("matricula", "marca", "modelo", cliente2, cliente4, 10, "caracteristicas", 3.0d, new Local(), System.currentTimeMillis());
+		Veiculo veiculo3 = new Veiculo("matricula", "marca", "modelo", cliente2, cliente3, 30, "caracteristicas", 3.0d, new Local(), System.currentTimeMillis());
+		Veiculo veiculo4 = new Veiculo("matricula", "marca", "modelo", cliente4, cliente1, 4, "caracteristicas", 3.0d, new Local(), System.currentTimeMillis());
 		veiculos.add(veiculo1);
 		veiculos.add(veiculo2);
 		veiculos.add(veiculo3);
